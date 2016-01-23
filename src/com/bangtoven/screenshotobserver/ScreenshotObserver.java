@@ -8,8 +8,9 @@ import android.os.FileObserver;
 import android.util.Log;
 
 public class ScreenshotObserver extends FileObserver {
-	private static final String TAG = "ScreenshotObserver"; 
-	private static final String PATH = Environment.getExternalStorageDirectory().toString() + "/Pictures/Screenshots/";
+	private static final String TAG = "ScreenshotObserver";
+	private static final boolean ALL_PHOTOS = false;
+	private static final String PATH = Environment.getExternalStorageDirectory().toString() + "/Pictures/" + (ALL_PHOTOS ? "" : "Screenshots/");
 	
 	private OnScreenshotTakenListener mListener;
 	private String mLastTakenPath;
@@ -24,14 +25,14 @@ public class ScreenshotObserver extends FileObserver {
 		Log.i(TAG, "Event:"+event+"\t"+path);
 		
 		if (path==null || event!=FileObserver.CLOSE_WRITE)
-			Log.i(TAG, "Don't care.");
+			//don't care
 		else if (mLastTakenPath!=null && path.equalsIgnoreCase(mLastTakenPath))
-			Log.i(TAG, "This event has been observed before.");
+			//event observed before
 		else {
 			mLastTakenPath = path;
 			File file = new File(PATH+path);
 			mListener.onScreenshotTaken(Uri.fromFile(file));
-			Log.i(TAG, "Send event to listener.");
+			//send instance of event to listener
 		}
 	}
 	
