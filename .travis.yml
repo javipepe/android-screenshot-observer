@@ -1,5 +1,5 @@
-language: java
-jdk:
-  - oraclejdk7
-notifications:
-  email: false
+language: android
+android:
+  components:
+    - build-tools-18.1.1
+    - android-9
