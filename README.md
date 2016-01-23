@@ -1,11 +1,9 @@
-#Screenshot observer
+#Screenshot (and now photos too!) observer
 
-##Screenshot taken listener for android
-
+###Screenshot or if you wish all types of photos taken listener for android
 
 ###Features
 - Screenshot taken listener
+- Optionally, all kind of updates to `~/Images` or `~/Pictures`.
 
-Full details and documentation can be found on the project page here:
-
-[Link](http://.../)
+Originally by @bangtoven
