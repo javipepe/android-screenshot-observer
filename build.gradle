@@ -1,5 +1,3 @@
-apply plugin: 'android'
-
 android {
   compileSdkVersion 19
   buildToolsVersion "19.0.3"
@@ -16,8 +14,4 @@ android {
       proguardFiles getDefaultProguardFile('proguard-project.txt')
     }  
   }
-}
-
-dependencies {
-  compile 'com.android.support:appcompat-v7:19.+'
 }
