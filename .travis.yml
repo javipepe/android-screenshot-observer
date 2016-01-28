@@ -1,5 +1,5 @@
-language: android
-android:
-  components:
-    - build-tools-18.1.1
-    - android-9
+language: ruby
+rvm:
+  - 1.9.3
+notifications:
+  email: false
